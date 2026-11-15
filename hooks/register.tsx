@@ -38,6 +38,14 @@ async function publish($: EngineInterface): Promise<void> {
   if (now.kind !== next.kind || now.reason !== next.reason) {
     await update($, light, () => next)
   }
+  showStatus($, next)
+}
+
+const DOT = { working: '🟢', waiting: '🟡', idle: '🔴' } as const
+
+function showStatus($: EngineInterface, now: Light): void {
+  const label = LOOK[now.kind].label
+  $.ui.status(now.kind === 'waiting' ? `${DOT[now.kind]} ${label} · ${now.reason}` : `${DOT[now.kind]} ${label}`)
 }
 
 function clearPermission(): boolean {

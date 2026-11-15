@@ -14,6 +14,7 @@ async function label($: any, surface: 'terminal' | 'desktop') {
 }
 
 test('red, green, yellow, green, red across a turn', async ($, on) => {
+  on('ui.status', () => ({ value: undefined }) as any)
   on('turn.start', (_, e) => ({ turnId: e.turnId }))
   on('turn.complete', (_, e) => ({ text: e.answer }))
   on('tool.call', () => ({ result: {} }))
@@ -45,6 +46,7 @@ test('red, green, yellow, green, red across a turn', async ($, on) => {
 })
 
 test('a question holds yellow while it is open', async ($, on) => {
+  on('ui.status', () => ({ value: undefined }) as any)
   let seen = ''
   on('turn.start', (_, e) => ({ turnId: e.turnId }))
   on('tool.call', async () => {
