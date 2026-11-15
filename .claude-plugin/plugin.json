@@ -1,0 +1,10 @@
+{
+  "name": "status-light",
+  "version": "0.1.0",
+  "description": "A status light above the prompt: green while Claude works, yellow while it waits on you, red when idle.",
+  "types": "./types/index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "jack-japer-flo"
+  }
+}

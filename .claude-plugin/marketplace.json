@@ -1,0 +1,7 @@
+{
+  "name": "claude-status-light",
+  "owner": { "name": "jack-japer-flo" },
+  "plugins": [
+    { "name": "status-light", "source": "./", "description": "Green while Claude works, yellow while it waits on you, red when idle." }
+  ]
+}
